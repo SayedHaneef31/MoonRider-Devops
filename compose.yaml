@@ -1,0 +1,16 @@
+services:
+  java-java-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: java-java-app
+    ports:
+      - "9191:9191"  # Expose the application port as defined in Dockerfile and README
+    restart: unless-stopped
+    init: true  # Ensures proper signal handling and process reaping
+    # env_file: ./.env  # Uncomment if .env file exists
+    # No external dependencies detected (database, cache, etc.)
+    # Runs as non-root user for security (see Dockerfile)
+
+# No external services (databases, caches, etc.) are required or configured by default.
+# No volumes section is included as there are no persistent data requirements.
