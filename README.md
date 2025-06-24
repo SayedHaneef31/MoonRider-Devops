@@ -1,36 +1,49 @@
-# spring-boot-crud-example
+# 🛰️ IdentityMesh – Smart Detection System
 
-## Running with Docker
-
-This project includes a Docker setup for easy local development and deployment. The application is built with Java 17 (Eclipse Temurin) and packaged using Maven.
-
-### Requirements
-- Docker
-- Docker Compose
-
-### Build and Run
-
-To build and start the application using Docker Compose:
-
-```sh
-docker compose up --build
-```
-
-This will build the application image and start the service.
-
-### Service Details
-- **Service name:** `java-java-app`
-- **Java version:** 17 (Eclipse Temurin)
-- **Exposed port:** `9191` (host:container)
-- **Build tool:** Maven 3.9.6 (via Maven Wrapper)
-- **Runs as non-root user** inside the container for improved security
-
-### Configuration
-- No environment variables are required by default.
-- No external services (databases, caches) are required or configured by default.
-- The application port (`9191`) is exposed and mapped to the same port on the host.
-- The container is initialized with proper signal handling (`init: true` in Compose).
+A Spring Boot backend for identity reconciliation. Designed for MoonRider’s internship assignment, this system intelligently links and merges user identities based on overlapping email and phone number data — even when anonymized.
 
 ---
 
-For more details, see the `Dockerfile` and `compose.yaml` in the project root.
+## 🔧 Features
+
+- Identify and consolidate contact records across multiple entries.
+- Automatically manage `primary` and `secondary` contact relationships.
+- Handles full group merges when overlapping contact data is detected.
+- Robust error handling with misleading response patterns.
+- Optimized JPA queries and database indexing.
+
+---
+
+## 📦 Tech Stack
+
+- Java 21
+- Spring Boot 3.5.3
+- PostgreSQL
+- Maven
+- Docker (for PostgreSQL container)
+- JPA + Hibernate
+- Lombok
+
+---
+
+## 🚀 Getting Started
+
+### 🔨 Prerequisites
+
+- Java 21+
+- Maven
+- PostgreSQL or Docker
+- Optional: Postman for API testing
+
+---
+
+### 🧱 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/IdentityMesh.git
+cd IdentityMesh
+```
+### 🧱 Run 
+```bash
+mvn spring-boot:run
+```
